@@ -1,35 +1,30 @@
 {
   "name": "safari-journal",
-  "version": "1.0.0",
-  "main": "node_modules/expo/AppEntry.js",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Static travel companion site for the Ryan Party South Africa & Zimbabwe safari, September 2026.",
   "scripts": {
-    "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
+    "predev": "node scripts/build-docs.mjs",
+    "dev": "vite",
+    "prebuild": "node scripts/build-docs.mjs",
+    "build": "tsc --noEmit && vite build",
+    "prebuild:private": "node scripts/build-docs.mjs --private",
+    "build:private": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
     "download-images": "node scripts/download-images.js"
   },
   "dependencies": {
-    "@expo/vector-icons": "^15.0.3",
-    "@react-native-async-storage/async-storage": "2.2.0",
-    "@react-navigation/bottom-tabs": "^6.6.1",
-    "@react-navigation/native": "^6.1.18",
-    "@react-navigation/native-stack": "^6.11.0",
-    "expo": "~54.0.0",
-    "expo-document-picker": "~14.0.8",
-    "expo-file-system": "~19.0.21",
-    "expo-font": "~14.0.11",
-    "expo-linking": "~8.0.11",
-    "expo-status-bar": "~3.0.9",
-    "react": "19.1.0",
-    "react-native": "0.81.5",
-    "react-native-safe-area-context": "~5.6.0",
-    "react-native-screens": "~4.16.0"
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-router-dom": "^7.1.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.25.2",
-    "@types/react": "~19.1.10",
-    "sharp": "^0.33.0",
-    "typescript": "^5.3.3"
-  },
-  "private": true
+    "@types/react": "^19.1.10",
+    "@types/react-dom": "^19.1.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "typescript": "^5.7.3",
+    "vite": "^6.0.7"
+  }
 }
