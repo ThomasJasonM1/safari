@@ -1,5 +1,7 @@
-# Cloudflare Pages reads this file from the build output root.
-# Vite copies everything in public/ to dist/, so this lands where Pages wants it.
+# Cloudflare reads this file from the root of the deployed asset directory.
+# Vite copies everything in public/ to dist/, so it lands where it is wanted.
+# Supported by both Workers static assets (what this project deploys to) and
+# Pages. The file is parsed and is never served as an asset itself.
 #
 # There are two independent caches at work and they must not be confused:
 #
@@ -15,7 +17,15 @@
 
 # Entry points: always revalidate. "no-cache" means "check with the server
 # first", not "do not store" — an unchanged file still comes back as a cheap
-# 304. These three are what gate an update reaching anyone.
+# 304. These are what gate an update reaching anyone.
+#
+# Both "/" and "/index.html" are listed. The browser asks for "/", and a rule
+# written only against "/index.html" does not match it — Cloudflare's default
+# for HTML happens to revalidate anyway, but relying on that leaves the intent
+# out of the file.
+/
+  Cache-Control: no-cache
+
 /index.html
   Cache-Control: no-cache
 

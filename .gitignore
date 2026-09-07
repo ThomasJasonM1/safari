@@ -13,3 +13,6 @@ src/data/bundledDocs.ts
 # Included in the build only via `npm run build:private`.
 docs-private/*
 !docs-private/.gitkeep
+
+# Wrangler local dev/build scratch (miniflare state, bundle temp)
+.wrangler/

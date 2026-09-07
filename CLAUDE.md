@@ -48,12 +48,17 @@ BASE_PATH=/safari/ npm run build   # deploy under a subdirectory
 
 Requires an HTTP server. Vite emits `<script type="module" crossorigin>` plus a service worker, and browsers allow neither over `file://` — `dist/index.html` opened off disk renders blank.
 
+### Deployment — Workers static assets, not Pages
+Cloudflare put Pages into maintenance mode and steers new projects to Workers, whose build flow asks for a **deploy command** (`npx wrangler deploy`) that a Pages project would not have needed. `wrangler.jsonc` supplies the config: `assets.directory` is `./dist`, `not_found_handling` is `single-page-application`, and there is deliberately **no `main` entrypoint** — nothing here needs Worker code, so Cloudflare serves the assets directly.
+
+`not_found_handling` rarely fires because routing is hash-based, but it means a hand-typed path lands on the app rather than a bare 404. A side effect: a request for a file that is not in the build returns `index.html` with 200 rather than 404 — that is expected, and is not evidence a file shipped.
+
 ### PWA / offline
 `vite-plugin-pwa` with `registerType: 'autoUpdate'`. `workbox.globPatterns` includes `jpg` and `pdf`, and `maximumFileSizeToCacheInBytes` is raised to 4 MB because the itinerary PDF is ~1 MB and the 2 MB default would silently drop it. The precache is ~9 MB / 66 entries: the app shell, all 54 photos, both bundled PDFs. `sw.js` and the Workbox runtime are correctly *not* precached.
 
 `src/components/OfflineStatus.tsx` shows a one-time "saved for offline" confirmation (auto-dismissing) and a persistent marker while `navigator.onLine` is false. The confirmation matters operationally — someone leaving wifi needs to know the 9 MB download actually finished.
 
-`public/_headers` (Cloudflare Pages) keeps `index.html`, `sw.js`, `manifest.webmanifest` and `/docs/*` on `no-cache` so updates propagate immediately, while content-hashed `/assets/*` are `immutable` for a year. These are the HTTP cache and are orthogonal to the precache — offline, `Cache-Control` is never consulted.
+`public/_headers` (Cloudflare, both Workers static assets and Pages) keeps `index.html`, `sw.js`, `manifest.webmanifest` and `/docs/*` on `no-cache` so updates propagate immediately, while content-hashed `/assets/*` are `immutable` for a year. These are the HTTP cache and are orthogonal to the precache — offline, `Cache-Control` is never consulted.
 
 `devOptions.enabled` is `false`: an autoUpdate worker in front of the Vite dev server causes stale-module confusion.
 

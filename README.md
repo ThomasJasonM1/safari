@@ -46,6 +46,26 @@ The build assumes it is served from the **root of a domain**, which is what Clou
 BASE_PATH=/safari/ npm run build
 ```
 
+### Deploying to Cloudflare
+
+Cloudflare put Pages into maintenance mode, so this deploys as a **Worker with static assets**. `wrangler.jsonc` holds the config; there is no Worker script, so Cloudflare just serves `dist/`.
+
+| Cloudflare build setting | Value |
+|---|---|
+| Build command | `npm run build` |
+| Deploy command | `npx wrangler deploy` |
+| Version command | leave empty |
+
+Locally:
+
+```bash
+npx wrangler deploy
+```
+
+```bash
+npx wrangler dev
+```
+
 A service worker needs a concrete scope, so this has to be a real path rather than a relative `./` base. On Windows use PowerShell (`$env:BASE_PATH='/safari/'; npm run build`) — Git Bash rewrites a leading-slash value into a Windows path before Node ever sees it.
 
 ```bash
@@ -66,7 +86,7 @@ Tell everyone to **open the site once on hotel wifi before flying**, and wait fo
 
 ### Cache headers
 
-`public/_headers` is read by Cloudflare Pages. `index.html`, `sw.js`, `manifest.webmanifest` and the bundled PDFs are set to `no-cache` (revalidate every time) so a change pushed before departure is picked up on the next open; hashed files under `/assets/` are cached for a year, since a changed file gets a different URL.
+`public/_headers` is read by Cloudflare (Workers static assets, and Pages). `index.html`, `sw.js`, `manifest.webmanifest` and the bundled PDFs are set to `no-cache` (revalidate every time) so a change pushed before departure is picked up on the next open; hashed files under `/assets/` are cached for a year, since a changed file gets a different URL.
 
 Short TTLs there cost nothing offline — when there is no signal the worker serves from Cache Storage and never consults `Cache-Control` at all.
 

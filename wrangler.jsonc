@@ -1,0 +1,28 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+
+  // Cloudflare put Pages into maintenance mode and now steers new projects to
+  // Workers with static assets. That flow asks for a *deploy* command
+  // (`npx wrangler deploy`), which needs this file — a Pages project would have
+  // needed no config at all.
+  //
+  // There is no `main` entrypoint: this is a purely static site, so Cloudflare
+  // serves the assets directly and no Worker code runs.
+  "name": "safari-journal",
+  "compatibility_date": "2026-09-07",
+
+  "assets": {
+    "directory": "./dist",
+
+    // Routing is hash-based (`/#/wildlife`), so the browser only ever requests
+    // "/" and this rarely fires. It is here so that a stray deep link, or a
+    // path someone types by hand, lands on the app rather than a bare 404.
+    "not_found_handling": "single-page-application"
+  },
+
+  // Custom HTTP cache headers live in public/_headers, which Vite copies into
+  // dist/. Workers static assets parses that file and does not serve it.
+  "observability": {
+    "enabled": true
+  }
+}
