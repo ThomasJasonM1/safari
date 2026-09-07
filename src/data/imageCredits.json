@@ -1,0 +1,402 @@
+{
+  "vervet-monkey": {
+    "source": "Wikimedia Commons",
+    "title": "Vervet monkey",
+    "file": "Cercopiteco_verde_(Chlorocebus_pygerythrus),_parque_nacional_del_lago_Nakuru,_Kenia,_2024-05-18,_DD_77.jpg",
+    "artist": "Diego Delso",
+    "license": "CC BY-SA 4.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Cercopiteco_verde_(Chlorocebus_pygerythrus),_parque_nacional_del_lago_Nakuru,_Kenia,_2024-05-18,_DD_77.jpg"
+  },
+  "blue-wildebeest": {
+    "source": "Wikimedia Commons",
+    "title": "Blue wildebeest",
+    "file": "Blue_Wildebeest,_Ngorongoro.jpg",
+    "artist": "Muhammad Mahdi Karim",
+    "license": "GFDL 1.2",
+    "url": "https://commons.wikimedia.org/wiki/File:Blue_Wildebeest,_Ngorongoro.jpg"
+  },
+  "common-ostrich": {
+    "source": "Wikimedia Commons",
+    "title": "Common ostrich",
+    "file": "Struthio_camelus_-_Etosha_2014_(3).jpg",
+    "artist": "Yathin S Krishnappa",
+    "license": "CC BY-SA 4.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Struthio_camelus_-_Etosha_2014_(3).jpg"
+  },
+  "bontebok": {
+    "source": "Wikimedia Commons",
+    "title": "Bontebok",
+    "file": "Bontebok_(Damaliscus_pygargus_pygargus)_(30573334994).jpg",
+    "artist": "Bernard DUPONT from FRANCE",
+    "license": "CC BY-SA 2.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Bontebok_(Damaliscus_pygargus_pygargus)_(30573334994).jpg"
+  },
+  "cape-sugarbird": {
+    "source": "Wikimedia Commons",
+    "title": "Cape sugarbird",
+    "file": "Cape_Sugarbird_(Promerops_cafer).jpg",
+    "artist": "Alan Manson",
+    "license": "CC BY-SA 2.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Cape_Sugarbird_(Promerops_cafer).jpg"
+  },
+  "lilac-breasted-roller": {
+    "source": "Wikimedia Commons",
+    "title": "Lilac-breasted roller",
+    "file": "143_Lilac-breasted_roller_in_Etosha_National_Park_Photo_by_Giles_Laurent.jpg",
+    "artist": "Giles Laurent",
+    "license": "CC BY-SA 4.0",
+    "url": "https://commons.wikimedia.org/wiki/File:143_Lilac-breasted_roller_in_Etosha_National_Park_Photo_by_Giles_Laurent.jpg"
+  },
+  "southern-ground-hornbill": {
+    "source": "Wikimedia Commons",
+    "title": "Southern ground hornbill",
+    "file": "Southern_Ground_Hornbill_(Bucorvus_leadbeateri)_male_(12714625605),_crop.jpg",
+    "artist": "Bernard DUPONT from FRANCE",
+    "license": "CC BY-SA 2.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Southern_Ground_Hornbill_(Bucorvus_leadbeateri)_male_(12714625605),_crop.jpg"
+  },
+  "southern-carmine-bee-eater": {
+    "source": "Wikimedia Commons",
+    "title": "Southern carmine bee-eater",
+    "file": "Southern_Carmine_Bee-eater_(Merops_nubicoides)_(16732824032).jpg",
+    "artist": "Bernard DUPONT from FRANCE",
+    "license": "CC BY-SA 2.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Southern_Carmine_Bee-eater_(Merops_nubicoides)_(16732824032).jpg"
+  },
+  "bushbuck": {
+    "source": "Wikimedia Commons",
+    "title": "Cape bushbuck",
+    "file": "Flickr_-_Rainbirder_-_Imbabala_Bushbuck_(Tragelaphus_sylvaticus).jpg",
+    "artist": "Steve Garvie from Dunfermline, Fife, Scotland",
+    "license": "CC BY-SA 2.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Flickr_-_Rainbirder_-_Imbabala_Bushbuck_(Tragelaphus_sylvaticus).jpg"
+  },
+  "banded-mongoose": {
+    "source": "Wikimedia Commons",
+    "title": "Banded mongoose",
+    "file": "Banded_Mongoose_Nose_Detail,_crop.jpg",
+    "artist": "Axel Tschentscher",
+    "license": "CC BY-SA 4.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Banded_Mongoose_Nose_Detail,_crop.jpg"
+  },
+  "african-black-oystercatcher": {
+    "source": "Wikimedia Commons",
+    "title": "African oystercatcher",
+    "file": "African_Black_Oystercatcher_(2).JPG",
+    "artist": "Dane Paijmans]",
+    "license": "CC BY-SA 3.0",
+    "url": "https://commons.wikimedia.org/wiki/File:African_Black_Oystercatcher_(2).JPG"
+  },
+  "helmeted-guineafowl": {
+    "source": "Wikimedia Commons",
+    "title": "Helmeted guineafowl",
+    "file": "Numida meleagris -Kruger National Park, South Africa-8a.jpg",
+    "artist": "New Jersey Birds",
+    "license": "CC BY-SA 2.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Numida_meleagris_-Kruger_National_Park,_South_Africa-8a.jpg"
+  },
+  "african-penguin": {
+    "source": "Wikimedia Commons",
+    "title": "African penguin",
+    "file": "Wikimania_2018,_Cape_Town_(_1050602),_crop.jpg",
+    "artist": "Matti Blume",
+    "license": "CC BY-SA 4.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Wikimania_2018,_Cape_Town_(_1050602),_crop.jpg"
+  },
+  "southern-right-whale": {
+    "source": "Wikimedia Commons",
+    "title": "Southern right whale",
+    "file": "Southern_right_whale6.jpg",
+    "artist": "Michaël CATANZARITI",
+    "license": "Public domain",
+    "url": "https://commons.wikimedia.org/wiki/File:Southern_right_whale6.jpg"
+  },
+  "dassie": {
+    "source": "Wikimedia Commons",
+    "title": "Rock hyrax",
+    "file": "Rock_hyrax_Serengeti_National_Park.jpg",
+    "artist": "Naturedata",
+    "license": "CC0",
+    "url": "https://commons.wikimedia.org/wiki/File:Rock_hyrax_Serengeti_National_Park.jpg"
+  },
+  "white-lion": {
+    "source": "Wikimedia Commons",
+    "title": "White lion",
+    "file": "White_Lion444.jpg",
+    "artist": "Benjamint444",
+    "license": "CC BY-SA 3.0",
+    "url": "https://commons.wikimedia.org/wiki/File:White_Lion444.jpg"
+  },
+  "leopard": {
+    "source": "Wikimedia Commons",
+    "title": "African leopard",
+    "file": "Leopard_(Panthera_pardus_pardus)_Kruger.jpg",
+    "artist": "Charles J. Sharp",
+    "license": "CC BY-SA 4.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Leopard_(Panthera_pardus_pardus)_Kruger.jpg"
+  },
+  "elephant": {
+    "source": "Wikimedia Commons",
+    "title": "African bush elephant",
+    "file": "178_Male_African_bush_elephant_in_Etosha_National_Park_Photo_by_Giles_Laurent.jpg",
+    "artist": "Giles Laurent",
+    "license": "CC BY-SA 4.0",
+    "url": "https://commons.wikimedia.org/wiki/File:178_Male_African_bush_elephant_in_Etosha_National_Park_Photo_by_Giles_Laurent.jpg"
+  },
+  "white-rhino": {
+    "source": "Wikimedia Commons",
+    "title": "White rhinoceros",
+    "file": "109_Male_White_rhinoceros_walking_in_the_Kalahari_Desert_of_Namibia_Photo_by_Giles_Laurent.jpg",
+    "artist": "Giles Laurent",
+    "license": "CC BY-SA 4.0",
+    "url": "https://commons.wikimedia.org/wiki/File:109_Male_White_rhinoceros_walking_in_the_Kalahari_Desert_of_Namibia_Photo_by_Giles_Laurent.jpg"
+  },
+  "buffalo": {
+    "source": "Wikimedia Commons",
+    "title": "African buffalo",
+    "file": "African_buffalo_(Syncerus_caffer_caffer)_male_with_cattle_egret.jpg",
+    "artist": "Charles J. Sharp",
+    "license": "CC BY-SA 4.0",
+    "url": "https://commons.wikimedia.org/wiki/File:African_buffalo_(Syncerus_caffer_caffer)_male_with_cattle_egret.jpg"
+  },
+  "wild-dog": {
+    "source": "Wikimedia Commons",
+    "title": "African wild dog",
+    "file": "African_Wild_Dog_at_Working_with_Wildlife.jpg",
+    "artist": "AfricanConservation",
+    "license": "CC BY-SA 4.0",
+    "url": "https://commons.wikimedia.org/wiki/File:African_Wild_Dog_at_Working_with_Wildlife.jpg"
+  },
+  "giraffe": {
+    "source": "Wikimedia Commons",
+    "title": "Southern giraffe",
+    "file": "Angolan_giraffe_(Giraffa_camelopardalis_angolensis)_males.jpg",
+    "artist": "Charles J. Sharp",
+    "license": "CC BY-SA 4.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Angolan_giraffe_(Giraffa_camelopardalis_angolensis)_males.jpg"
+  },
+  "zebra": {
+    "source": "Wikimedia Commons",
+    "title": "Plains zebra",
+    "file": "Equus_quagga_burchellii_-_Etosha,_2014.jpg",
+    "artist": "Yathin S Krishnappa",
+    "license": "CC BY-SA 3.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Equus_quagga_burchellii_-_Etosha,_2014.jpg"
+  },
+  "hippo": {
+    "source": "Wikimedia Commons",
+    "title": "Hippopotamus",
+    "file": "Portrait_Hippopotamus_in_the_water.jpg",
+    "artist": "Muhammad Mahdi Karim",
+    "license": "CC BY-SA 4.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Portrait_Hippopotamus_in_the_water.jpg"
+  },
+  "crocodile": {
+    "source": "Wikimedia Commons",
+    "title": "Nile crocodile",
+    "file": "NileCrocodile.jpg",
+    "artist": "Dewet",
+    "license": "CC BY-SA 2.0",
+    "url": "https://commons.wikimedia.org/wiki/File:NileCrocodile.jpg"
+  },
+  "warthog": {
+    "source": "Wikimedia Commons",
+    "title": "Common warthog",
+    "file": "Southern_warthog_(Phacochoerus_africanus_sundevallii)_male.jpg",
+    "artist": "Charles J. Sharp",
+    "license": "CC BY-SA 4.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Southern_warthog_(Phacochoerus_africanus_sundevallii)_male.jpg"
+  },
+  "impala": {
+    "source": "Wikimedia Commons",
+    "title": "Impala",
+    "file": "Common_impala_(Aepyceros_melampus_melampus)_male_Serengeti.jpg",
+    "artist": "Charles J. Sharp",
+    "license": "CC BY-SA 4.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Common_impala_(Aepyceros_melampus_melampus)_male_Serengeti.jpg"
+  },
+  "kudu": {
+    "source": "Wikimedia Commons",
+    "title": "Greater kudu",
+    "file": "Male_greater_kudu.jpg",
+    "artist": "L0k1m0nk33 at English Wikipedia",
+    "license": "CC BY-SA 3.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Male_greater_kudu.jpg"
+  },
+  "nyala": {
+    "source": "Wikimedia Commons",
+    "title": "Nyala",
+    "file": "Nyala_(Tragelaphus_angasii)_male_Maputo.jpg",
+    "artist": "Charles J. Sharp",
+    "license": "CC BY-SA 4.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Nyala_(Tragelaphus_angasii)_male_Maputo.jpg"
+  },
+  "waterbuck": {
+    "source": "Wikimedia Commons",
+    "title": "Waterbuck",
+    "file": "069_Waterbuck_at_Queen_Elizabeth_National_Park_Photo_by_Giles_Laurent.jpg",
+    "artist": "Giles Laurent",
+    "license": "CC BY-SA 4.0",
+    "url": "https://commons.wikimedia.org/wiki/File:069_Waterbuck_at_Queen_Elizabeth_National_Park_Photo_by_Giles_Laurent.jpg"
+  },
+  "african-fish-eagle": {
+    "source": "Wikimedia Commons",
+    "title": "African fish eagle",
+    "file": "African_fish_eagle,_Haliaeetus_vocifer,_at_Chobe_National_Park,_Botswana_(33516612831).jpg",
+    "artist": "Derek Keats from Johannesburg, South Africa",
+    "license": "CC BY 2.0",
+    "url": "https://commons.wikimedia.org/wiki/File:African_fish_eagle,_Haliaeetus_vocifer,_at_Chobe_National_Park,_Botswana_(33516612831).jpg"
+  },
+  "nile-monitor": {
+    "source": "Wikimedia Commons",
+    "title": "Nile monitor",
+    "file": "Nile_monitor_(Varanus_niloticus)_2.jpg",
+    "artist": "Charles J. Sharp",
+    "license": "CC BY-SA 4.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Nile_monitor_(Varanus_niloticus)_2.jpg"
+  },
+  "table-mountain-scorpion": {
+    "source": "Wikimedia Commons",
+    "title": "Uroplectes",
+    "file": "Uroplectes_flavoviridis.jpg",
+    "artist": "Ryanvanhuyssteen",
+    "license": "CC BY-SA 4.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Uroplectes_flavoviridis.jpg"
+  },
+  "cape-baboon-spider": {
+    "source": "Wikimedia Commons",
+    "title": "Harpactira",
+    "file": "Harpactira_marksi.JPG",
+    "artist": "Domenico Von Dino",
+    "license": "CC BY-SA 4.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Harpactira_marksi.JPG"
+  },
+  "dung-beetle": {
+    "source": "Wikimedia Commons",
+    "title": "Pachylomera femoralis",
+    "file": "Flattenened giant dung beetle (Pachylomera femoralis).jpg",
+    "artist": "Charles J. Sharp",
+    "license": "CC BY-SA 4.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Flattenened_giant_dung_beetle_(Pachylomera_femoralis).jpg"
+  },
+  "giant-millipede": {
+    "source": "Wikimedia Commons",
+    "title": "Archispirostreptus gigas",
+    "file": "Archispirostreptus-Gigas-Amphitheatre.jpg",
+    "artist": "Bjørn Christian Tørrissen",
+    "license": "CC BY-SA 3.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Archispirostreptus-Gigas-Amphitheatre.jpg"
+  },
+  "golden-orb-spider": {
+    "source": "Wikimedia Commons",
+    "title": "Trichonephila senegalensis",
+    "file": "Trichonephila_senegalensis_298111507_536947995.jpg",
+    "artist": "Peter Webb",
+    "license": "CC BY 4.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Trichonephila_senegalensis_298111507_536947995.jpg"
+  },
+  "african-mantis": {
+    "source": "Wikimedia Commons",
+    "title": "Sphodromantis",
+    "file": "Sphodromantis_viridis.jpg",
+    "artist": "Mintz_l",
+    "license": "Public domain",
+    "url": "https://commons.wikimedia.org/wiki/File:Sphodromantis_viridis.jpg"
+  },
+  "tsetse-fly": {
+    "source": "Wikimedia Commons",
+    "title": "Tsetse fly",
+    "file": "Glossina-morsitans.jpg",
+    "artist": "Alan R Walker",
+    "license": "CC BY-SA 3.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Glossina-morsitans.jpg"
+  },
+  "goliath-beetle": {
+    "source": "Wikimedia Commons",
+    "title": "Goliathus albosignatus",
+    "file": "Goliathus albosignatus.JPG",
+    "artist": "Notafly",
+    "license": "CC BY-SA 3.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Goliathus_albosignatus.JPG"
+  },
+  "baboon": {
+    "source": "Wikimedia Commons",
+    "title": "Chacma baboon",
+    "file": "Chacma_Baboon_(Papio_ursinus)_(16824823063).jpg",
+    "artist": "Bernard DUPONT from FRANCE",
+    "license": "CC BY-SA 2.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Chacma_Baboon_(Papio_ursinus)_(16824823063).jpg"
+  },
+  "lion": {
+    "source": "Wikimedia Commons",
+    "title": "Lion",
+    "file": "020_The_lion_king_Snyggve_in_the_Serengeti_National_Park_Photo_by_Giles_Laurent.jpg",
+    "artist": "Giles Laurent",
+    "license": "CC BY-SA 4.0",
+    "url": "https://commons.wikimedia.org/wiki/File:020_The_lion_king_Snyggve_in_the_Serengeti_National_Park_Photo_by_Giles_Laurent.jpg"
+  },
+  "hyena": {
+    "source": "Wikimedia Commons",
+    "title": "Spotted hyena",
+    "file": "Spotted_hyena_(Crocuta_crocuta).jpg",
+    "artist": "Charles J. Sharp",
+    "license": "CC BY-SA 4.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Spotted_hyena_(Crocuta_crocuta).jpg"
+  },
+  "eland": {
+    "source": "Wikimedia Commons",
+    "title": "Common eland",
+    "file": "Taurotragus_oryx_-_young_bull_-_Etosha_2015.jpg",
+    "artist": "Yathin S Krishnappa",
+    "license": "CC BY-SA 4.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Taurotragus_oryx_-_young_bull_-_Etosha_2015.jpg"
+  },
+  "saddle-billed-stork": {
+    "source": "Wikimedia Commons",
+    "title": "Saddle-billed stork",
+    "file": "Ephippiorhynchus_senegalensis_-Kruger_National_Park,_Limpopo,_South_Africa-8.jpg",
+    "artist": "hyper7pro",
+    "license": "CC BY 2.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Ephippiorhynchus_senegalensis_-Kruger_National_Park,_Limpopo,_South_Africa-8.jpg"
+  },
+  "mound-termite": {
+    "source": "Wikimedia Commons",
+    "title": "Macrotermes natalensis",
+    "file": "Macrotermes natalensis 192187025.jpg",
+    "artist": "Mahomed Desai",
+    "license": "CC BY 4.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Macrotermes_natalensis_192187025.jpg"
+  },
+  "cape-fur-seal": {
+    "source": "Wikimedia Commons",
+    "title": "Brown fur seal",
+    "file": "129 Cape fur seal bull walking at Pelican point Photo by Giles Laurent.jpg",
+    "artist": "Giles Laurent",
+    "license": "CC BY-SA 4.0",
+    "url": "https://commons.wikimedia.org/wiki/File:129_Cape_fur_seal_bull_walking_at_Pelican_point_Photo_by_Giles_Laurent.jpg"
+  },
+  "cheetah": {
+    "source": "Wikimedia Commons",
+    "title": "Southern African cheetah",
+    "file": "Cheetah (Acinonyx jubatus) female.jpg",
+    "artist": "Bernard DUPONT",
+    "license": "CC BY-SA 2.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Cheetah_(Acinonyx_jubatus)_female.jpg"
+  },
+  "cape-rain-spider": {
+    "source": "Wikimedia Commons",
+    "title": "Palystes superciliosus",
+    "file": "Palystes_superciliosus,_a,_Pretoria.jpg",
+    "artist": "JMK",
+    "license": "CC BY-SA 3.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Palystes_superciliosus,_a,_Pretoria.jpg"
+  },
+  "mopane-worm": {
+    "source": "Wikimedia Commons",
+    "title": "Mopane worm",
+    "file": "Mopane worm on mopane tree.jpg",
+    "artist": "JackyR",
+    "license": "CC BY 2.5",
+    "url": "https://commons.wikimedia.org/wiki/File:Mopane_worm_on_mopane_tree.jpg"
+  }
+}

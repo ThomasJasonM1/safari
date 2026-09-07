@@ -17,7 +17,7 @@ export const PACKING_LIST: PackingCategory[] = [
     title: 'Safari Clothing',
     icon: '👕',
     items: [
-      { id: 'long-sleeve-shirts', label: 'Long-sleeve shirts, neutral colours (3–4)', notes: 'Khaki, olive, stone, brown — avoid white or bright colours in the bush' },
+      { id: 'long-sleeve-shirts', label: 'Long-sleeve shirts, neutral colours (3–4)', notes: 'Khaki, olive, stone, brown. Avoid dark blue and black on game drives — they attract tsetse flies, which matters at Mana Pools. No camouflage or military-pattern clothing: it is prohibited for travellers in Zimbabwe' },
       { id: 'tshirts', label: 'T-shirts, neutral colours (3–4)' },
       { id: 'trousers', label: 'Lightweight safari trousers or zip-offs (2 pairs)', notes: 'Long trousers protect against insects and thorn bush' },
       { id: 'shorts', label: 'Shorts (2 pairs)', notes: 'For Cape Town days and lodge pool time' },
@@ -29,6 +29,8 @@ export const PACKING_LIST: PackingCategory[] = [
       { id: 'socks', label: 'Socks (7+ pairs, including a wool pair for cold mornings)' },
       { id: 'swimwear', label: 'Swimwear (2 sets)', notes: 'All lodges have pools; Cape Town beaches are swimmable in September' },
       { id: 'sun-hat', label: 'Wide-brimmed sun hat', notes: 'Compulsory — the African sun is intense even in early spring' },
+      { id: 'sunglasses', label: 'Polarised sunglasses, UV protected', notes: 'TMAC ask for polarised rather than tinted fashion glasses — the glare off the Zambezi and the Cape water is severe' },
+      { id: 'sleepwear', label: 'Sleepwear', notes: 'Warm for the camps — Timbavati and Mana Pools nights are cold in September' },
       { id: 'buff', label: 'Buff or neck gaiter', notes: 'Dust on game drives; doubles as ear warmer on cold mornings' },
       { id: 'gloves', label: 'Lightweight gloves', notes: 'For early morning drives at Timbavati and Mana Pools' },
     ],
@@ -74,6 +76,8 @@ export const PACKING_LIST: PackingCategory[] = [
       { id: 'plasters', label: 'Plasters, blister pads and antiseptic wipes' },
       { id: 'prescriptions', label: 'Prescription medicines — full course plus extra', notes: 'Carry in hand luggage; pharmacies at Mana Pools and Timbavati do not exist' },
       { id: 'eye-drops', label: 'Eye drops', notes: 'Dust on game drives can be significant, particularly at Mana Pools in the dry season' },
+      { id: 'spare-glasses', label: 'Spare glasses if you wear contact lenses', notes: 'TMAC recommend this specifically — dust on the game drives irritates lenses badly' },
+      { id: 'motion-sickness', label: 'Anti-nausea / motion sickness tablets', notes: 'Four light-aircraft charter legs plus the Zambezi boat cruises' },
       { id: 'lip-balm', label: 'Lip balm with SPF', notes: 'Low humidity in the African bush dries lips quickly' },
     ],
   },
@@ -114,7 +118,7 @@ export const PACKING_LIST: PackingCategory[] = [
     title: 'Luggage',
     icon: '🧳',
     items: [
-      { id: 'soft-duffel', label: '7 kg soft duffel bag for charter flights', notes: 'CRITICAL: Federal Air and Wilderness Air Zimbabwe strictly enforce 7 kg soft-bag limits. Hard cases and frame rucksacks are NOT allowed on charter legs. Leave hard luggage in Johannesburg storage if needed.' },
+      { id: 'soft-duffel', label: 'Soft-sided duffel for the charter flights', notes: 'CRITICAL: Federal Air and Wilderness Air Zimbabwe only take soft bags — no hard cases, no frame rucksacks, no long hanging straps, and at least one flat surface. CONFIRM THE WEIGHT LIMIT: the TMAC packing list in the Docs tab says usually 40 lb (18 kg) per person, and the itinerary points to a separate Important Travel Information document. Check with TMAC before you pack.' },
       { id: 'main-case', label: 'Main suitcase (Cape Town and Victoria Falls legs only)' },
       { id: 'day-pack', label: 'Small day pack or rucksack', notes: 'For game drives, Cape Town day trips and as hand luggage on flights' },
       { id: 'packing-cubes', label: 'Packing cubes', notes: 'Help enormously when living out of a soft duffel for multiple camp changes' },
@@ -127,6 +131,7 @@ export const PACKING_LIST: PackingCategory[] = [
     title: 'Miscellaneous',
     icon: '🔦',
     items: [
+      { id: 'bird-guide', label: 'Southern African bird guide', notes: 'TMAC suggest Newman\'s or Sasol. The Wildlife tab covers the headline species, but a proper bird guide earns its place on the Zambezi' },
       { id: 'books', label: 'Books or e-reader', notes: 'Long-haul flights, lazy afternoon siestas and camp down-time' },
       { id: 'snacks', label: 'Energy bars and snacks', notes: 'Long travel days on Sep 11, 14, 18, 21 and 25 — lodges may not have food until arrival' },
       { id: 'water-bottle', label: 'Reusable water bottle', notes: 'Lodges provide filtered water; single-use plastic is discouraged in national parks' },

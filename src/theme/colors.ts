@@ -7,8 +7,8 @@ export const colors = {
   textLight: '#B8A898',
   primary: '#5C4A2A',
   border: '#E8DDD0',
-  tabBar: '#2C2416',
-  tabBarActive: '#C4862A',
+  bar: '#2C2416',
+  barActive: '#C4862A',
   success: '#4A7C59',
   danger: '#C0392B',
   white: '#FFFFFF',
@@ -21,12 +21,17 @@ export const colors = {
   },
 
   conservation: {
-    lc: '#4A7C59',   // Least Concern
-    nt: '#7D6B2A',   // Near Threatened
-    vu: '#C4862A',   // Vulnerable
-    en: '#C05A20',   // Endangered
-    cr: '#C0392B',   // Critically Endangered
+    LC: '#4A7C59',
+    NT: '#7D6B2A',
+    VU: '#C4862A',
+    EN: '#C05A20',
+    CR: '#C0392B',
   },
 } as const;
 
 export type DestinationKey = keyof typeof colors.destinations;
+
+/** Accent colour for a destination id, including the `transit` pseudo-destination. */
+export function accentFor(destination: string): string {
+  return (colors.destinations as Record<string, string>)[destination] ?? colors.textMuted;
+}

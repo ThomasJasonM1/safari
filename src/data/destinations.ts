@@ -16,7 +16,7 @@ export interface Destination {
   practicalTips: PracticalTip[];
   localPhrases: LocalPhrase[];
   insiderTip: string;
-  image: any;
+  image: string;
 }
 
 export interface PracticalTip {
@@ -132,7 +132,7 @@ export const DESTINATIONS: Destination[] = [
     ],
     insiderTip:
       'Sunday buffet lunches are available in The Clipper restaurant and you can enjoy pre-dinner drinks in the Cocktail Bar & Lounge at the Commodore.',
-    image: require('../../assets/images/destinations/cape-town.jpg'),
+    image: 'cape-town.jpg',
   },
   {
     id: 'timbavati',
@@ -229,7 +229,7 @@ export const DESTINATIONS: Destination[] = [
     ],
     insiderTip:
       'The Timbavati is home to the only naturally bred white lions in the world. Keep your camera ready on every game drive — and tell your ranger on day one that a white lion sighting is a priority.',
-    image: require('../../assets/images/destinations/timbavati.jpg'),
+    image: 'timbavati.jpg',
   },
   {
     id: 'victoriaFalls',
@@ -328,7 +328,7 @@ export const DESTINATIONS: Destination[] = [
     ],
     insiderTip:
       'Book a private dining experience in the garden overlooking the mighty Zambezi at Palm River Hotel — an unforgettable dinner. And don\'t miss the curio market in town for Zimbabwe\'s extraordinary soapstone and wood carving traditions.',
-    image: require('../../assets/images/destinations/victoria-falls.jpg'),
+    image: 'victoria-falls.jpg',
   },
   {
     id: 'manaPools',
@@ -425,6 +425,6 @@ export const DESTINATIONS: Destination[] = [
     ],
     insiderTip:
       'A boat cruise along the mighty Zambezi is a wonderful way to see wildlife and waterbirds. For the adventurous — there\'s the option of canoeing along this famous river! And ask about the Star Bed experience — sleeping under an open African sky is something you\'ll never forget.',
-    image: require('../../assets/images/destinations/mana-pools.jpg'),
+    image: 'mana-pools.jpg',
   },
 ];
