@@ -36,14 +36,37 @@ Then open http://localhost:5173.
 npm run build
 ```
 
-Writes a self-contained static site to `dist/`. It uses relative asset paths and hash-based routing, so it works unchanged from a subdirectory — a GitHub Pages project site, an S3 prefix, a folder on an existing domain — with no server-side rewrites for deep links.
+Writes a self-contained static site to `dist/`. Hash-based routing means deep links work with no server-side rewrite rules.
 
-It does need to be served over HTTP, not opened straight off disk: Vite emits an ES module script, and browsers refuse to load those over `file://`. Any static server will do (`npm run preview`, `npx serve dist`, `python -m http.server`).
+It must be served over HTTP(S), not opened off disk — Vite emits an ES module script and a service worker, and browsers allow neither over `file://`. Any static server will do (`npm run preview`, `npx serve dist`).
+
+The build assumes it is served from the **root of a domain**, which is what Cloudflare Pages and a custom domain give you. To deploy under a subdirectory instead (a GitHub Pages *project* site, say), pass the path — trailing slash included:
+
+```bash
+BASE_PATH=/safari/ npm run build
+```
+
+A service worker needs a concrete scope, so this has to be a real path rather than a relative `./` base. On Windows use PowerShell (`$env:BASE_PATH='/safari/'; npm run build`) — Git Bash rewrites a leading-slash value into a Windows path before Node ever sees it.
 
 ```bash
 npm run preview   # serve the built dist/ locally
 npm run typecheck # tsc --noEmit
 ```
+
+---
+
+## Offline
+
+The site is a PWA. On the first visit it precaches **everything** — the app, all 54 photos and both trip PDFs, about 9 MB — and a green "Saved for offline use" banner confirms when that has finished. After that it works with no signal at all, which is the point: Kings Camp and Ruckomechi have little to no connectivity, and Mana Pools effectively none.
+
+- **Online:** the browser checks for a new build on load, downloads it in the background, and swaps to it. No cache-clearing, no "hard refresh" instructions for anyone.
+- **Offline:** everything is served from the cache, and a grey "Offline — showing the saved copy" marker appears so a stale page isn't mistaken for a live one.
+
+Tell everyone to **open the site once on hotel wifi before flying**, and wait for the green banner. That is the whole ritual. On a phone, *Add to Home Screen* gives it an icon and a full-screen window; it works either way.
+
+Two things that stay online-only by nature: `tel:` links need signal to actually dial, and a document someone adds to the Docs page lives only in that person's browser.
+
+The service worker is disabled in `npm run dev` — an auto-updating worker in front of a Vite dev server is a good way to spend an afternoon debugging stale modules.
 
 ---
 
@@ -77,6 +100,7 @@ This replaced an earlier Unsplash keyword-search approach, which had produced a 
 node scripts/fetch-wikimedia-images.mjs           # fill in anything missing
 node scripts/fetch-wikimedia-images.mjs --force   # re-download everything
 node scripts/compress-images.mjs                  # downscale + re-encode in place
+node scripts/make-icons.mjs                       # regenerate the PWA icon set
 ```
 
 Wikimedia rate-limits anonymous bursts, so the script backs off and retries; a full `--force` run takes a few minutes and may need a second pass.

@@ -11,6 +11,7 @@ import DocumentsPage from './pages/DocumentsPage';
 import FlightsPage from './pages/FlightsPage';
 import FlightDetailPage from './pages/FlightDetailPage';
 import PackingListPage from './pages/PackingListPage';
+import OfflineStatus from './components/OfflineStatus';
 
 const TABS = [
   { to: '/', icon: '🗓', label: 'Trip' },
@@ -109,6 +110,8 @@ export default function App() {
           <Route path="*" element={<OverviewPage />} />
         </Routes>
       </main>
+
+      <OfflineStatus />
 
       <nav className="tabbar">
         <div className="tabbar-inner">

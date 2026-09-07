@@ -32,16 +32,30 @@ npm run typecheck  # tsc --noEmit
 
 node scripts/fetch-wikimedia-images.mjs [--force]  # (re)fetch species photos
 node scripts/compress-images.mjs                   # downscale/re-encode in place
+node scripts/make-icons.mjs                        # regenerate PWA icons into public/
+
+BASE_PATH=/safari/ npm run build   # deploy under a subdirectory
 ```
 
 ---
 
 ## Technical Decisions
 
-### Vite, relative base, HashRouter
-`vite.config.ts` sets `base: './'` and `src/main.tsx` uses `HashRouter`. Together these mean the built `dist/` runs from any subpath — GitHub Pages project site, S3 prefix, subfolder — with no server-side rewrite rules for deep links. Do not switch to `BrowserRouter` without also committing to a host that can rewrite deep links to `index.html`.
+### Base path, HashRouter
+`src/main.tsx` uses `HashRouter`, so deep links need no server-side rewrites. Do not switch to `BrowserRouter` without committing to a host that can rewrite them to `index.html`.
 
-It still needs an HTTP server. Vite emits `<script type="module" crossorigin>`, which browsers refuse to load over `file://`, so `dist/index.html` opened directly off disk renders an empty page. Use `npm run preview` or any static server.
+`vite.config.ts` reads `base` from `process.env.BASE_PATH`, defaulting to `/`. **It used to be `'./'`; a relative base cannot give a service worker a stable scope**, so it now has to be a concrete path. For a subdirectory deploy, build with `BASE_PATH=/safari/ npm run build` (trailing slash required; on Windows use PowerShell — Git Bash mangles the leading slash into a Windows path) — the value flows into the manifest's `start_url` and `scope`, and `DocumentsPage` builds its PDF links off `import.meta.env.BASE_URL`.
+
+Requires an HTTP server. Vite emits `<script type="module" crossorigin>` plus a service worker, and browsers allow neither over `file://` — `dist/index.html` opened off disk renders blank.
+
+### PWA / offline
+`vite-plugin-pwa` with `registerType: 'autoUpdate'`. `workbox.globPatterns` includes `jpg` and `pdf`, and `maximumFileSizeToCacheInBytes` is raised to 4 MB because the itinerary PDF is ~1 MB and the 2 MB default would silently drop it. The precache is ~9 MB / 66 entries: the app shell, all 54 photos, both bundled PDFs. `sw.js` and the Workbox runtime are correctly *not* precached.
+
+`src/components/OfflineStatus.tsx` shows a one-time "saved for offline" confirmation (auto-dismissing) and a persistent marker while `navigator.onLine` is false. The confirmation matters operationally — someone leaving wifi needs to know the 9 MB download actually finished.
+
+`devOptions.enabled` is `false`: an autoUpdate worker in front of the Vite dev server causes stale-module confusion.
+
+Verified end to end: with the server killed outright, a full reload still renders all 102 species rows and serves the 1 MB itinerary PDF from cache; with the server back and a newer build on disk, an open page auto-reloads onto the new bundle without any user action.
 
 ### Storage split — localStorage vs IndexedDB
 - `src/lib/storage.ts` — small JSON sets in `localStorage` under a `safari:` prefix (`safari:spotted`, `safari:packing`). Every read/write is try/caught so private browsing or full storage degrades to "does not persist" rather than a crash.
@@ -103,6 +117,8 @@ Pre-trip days (Paris layover, London connection) use `destination: 'transit'`, w
 | `scripts/build-docs.mjs` | Two-tier PDF bundling |
 | `scripts/fetch-wikimedia-images.mjs` | Species photo sourcing + attribution |
 | `scripts/compress-images.mjs` | In-place downscale/re-encode |
+| `scripts/make-icons.mjs` | Generates the PWA icon set into `public/` |
+| `src/components/OfflineStatus.tsx` | Offline / cached-and-ready banners |
 
 ---
 
