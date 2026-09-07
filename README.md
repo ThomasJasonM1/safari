@@ -64,6 +64,12 @@ The site is a PWA. On the first visit it precaches **everything** — the app, a
 
 Tell everyone to **open the site once on hotel wifi before flying**, and wait for the green banner. That is the whole ritual. On a phone, *Add to Home Screen* gives it an icon and a full-screen window; it works either way.
 
+### Cache headers
+
+`public/_headers` is read by Cloudflare Pages. `index.html`, `sw.js`, `manifest.webmanifest` and the bundled PDFs are set to `no-cache` (revalidate every time) so a change pushed before departure is picked up on the next open; hashed files under `/assets/` are cached for a year, since a changed file gets a different URL.
+
+Short TTLs there cost nothing offline — when there is no signal the worker serves from Cache Storage and never consults `Cache-Control` at all.
+
 Two things that stay online-only by nature: `tel:` links need signal to actually dial, and a document someone adds to the Docs page lives only in that person's browser.
 
 The service worker is disabled in `npm run dev` — an auto-updating worker in front of a Vite dev server is a good way to spend an afternoon debugging stale modules.

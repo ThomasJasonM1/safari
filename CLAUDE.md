@@ -53,6 +53,8 @@ Requires an HTTP server. Vite emits `<script type="module" crossorigin>` plus a 
 
 `src/components/OfflineStatus.tsx` shows a one-time "saved for offline" confirmation (auto-dismissing) and a persistent marker while `navigator.onLine` is false. The confirmation matters operationally — someone leaving wifi needs to know the 9 MB download actually finished.
 
+`public/_headers` (Cloudflare Pages) keeps `index.html`, `sw.js`, `manifest.webmanifest` and `/docs/*` on `no-cache` so updates propagate immediately, while content-hashed `/assets/*` are `immutable` for a year. These are the HTTP cache and are orthogonal to the precache — offline, `Cache-Control` is never consulted.
+
 `devOptions.enabled` is `false`: an autoUpdate worker in front of the Vite dev server causes stale-module confusion.
 
 Verified end to end: with the server killed outright, a full reload still renders all 102 species rows and serves the 1 MB itinerary PDF from cache; with the server back and a newer build on disk, an open page auto-reloads onto the new bundle without any user action.

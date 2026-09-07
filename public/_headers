@@ -1,0 +1,41 @@
+# Cloudflare Pages reads this file from the build output root.
+# Vite copies everything in public/ to dist/, so this lands where Pages wants it.
+#
+# There are two independent caches at work and they must not be confused:
+#
+#   1. This file — the HTTP/edge cache. Controls how quickly a NEW BUILD
+#      reaches people. Kept deliberately short on the entry points.
+#   2. The service worker precache. Controls what works with NO SIGNAL.
+#      Cache-Control has no bearing on it: offline, the worker serves from
+#      Cache Storage and never touches the network.
+#
+# So short TTLs here cost nothing offline. They only mean that a change
+# pushed before the trip is picked up on the next open rather than whenever
+# a stale copy happens to expire.
+
+# Entry points: always revalidate. "no-cache" means "check with the server
+# first", not "do not store" — an unchanged file still comes back as a cheap
+# 304. These three are what gate an update reaching anyone.
+/index.html
+  Cache-Control: no-cache
+
+/sw.js
+  Cache-Control: no-cache
+
+/manifest.webmanifest
+  Cache-Control: no-cache
+
+# Bundled PDFs keep stable filenames, so they must revalidate too, otherwise
+# a corrected itinerary could sit behind a stale copy.
+/docs/*
+  Cache-Control: no-cache
+
+# Everything Vite emits under /assets/ carries a content hash in its filename,
+# so a changed file is a different URL. Safe to cache permanently, and this is
+# the bulk of the 9 MB — worth not re-downloading on a hotel connection.
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
