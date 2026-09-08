@@ -23,7 +23,7 @@ const TABS = [
 
 /** Page title and whether a back button belongs in the header, keyed by route. */
 function headerFor(pathname: string): { title: string; sub?: string; back: boolean } {
-  if (pathname === '/') return { title: 'Safari Journal', sub: BOOKING_REFERENCE, back: false };
+  if (pathname === '/') return { title: 'Ryan Safari', sub: BOOKING_REFERENCE, back: false };
   if (pathname.startsWith('/day/')) return { title: 'Day Detail', back: true };
   if (pathname === '/destinations') return { title: 'Destinations', back: false };
   if (pathname.startsWith('/destinations/')) return { title: 'Destination Guide', back: true };
@@ -33,7 +33,7 @@ function headerFor(pathname: string): { title: string; sub?: string; back: boole
   if (pathname === '/flights') return { title: 'Our Flights', back: true };
   if (pathname.startsWith('/flights/')) return { title: 'Flight Detail', back: true };
   if (pathname === '/packing') return { title: 'Packing List', back: true };
-  return { title: 'Safari Journal', back: true };
+  return { title: 'Ryan Safari', back: true };
 }
 
 function Menu() {

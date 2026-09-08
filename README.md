@@ -1,4 +1,4 @@
-# Safari Journal
+# Ryan Safari
 
 A static website for the Ryan Party's South Africa & Zimbabwe safari, **14–25 September 2026**.
 

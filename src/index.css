@@ -497,6 +497,11 @@ a.card:hover { border-color: var(--text-light); }
   height: 62px;
   border-radius: 8px;
   object-fit: cover;
+  /* 13 of the 50 species photos are portrait. A square crop centred on a tall
+     photo removes the animal's head, which is the one part worth seeing in a
+     thumbnail. Biasing the crop upwards keeps it. Landscape photos are
+     unaffected: with `cover` they have no vertical overflow to position. */
+  object-position: 50% 20%;
   flex: none;
   background: var(--surface-alt);
 }
@@ -519,8 +524,17 @@ a.card:hover { border-color: var(--text-light); }
 
 .animal-hero {
   width: 100%;
-  height: 220px;
-  object-fit: cover;
+  /* Let the photo keep its own shape rather than forcing every species into a
+     220px letterbox. A tall shot like the fish eagle lost its head entirely to
+     that crop. `contain` plus a viewport-relative cap means the whole animal is
+     always visible, landscape photos look exactly as before, and only the
+     tallest few get narrow bars against the cream background. */
+  height: auto;
+  /* min-height reserves a box before the photo decodes, so the text below does
+     not jump on first paint now that the height is no longer fixed. */
+  min-height: 180px;
+  max-height: 46vh;
+  object-fit: contain;
   border-radius: var(--radius);
   margin-bottom: 12px;
   background: var(--surface-alt);

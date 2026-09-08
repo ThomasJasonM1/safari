@@ -19,8 +19,8 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.png', 'apple-touch-icon.png'],
       manifest: {
-        name: 'Safari Journal (Ryan Party 2026)',
-        short_name: 'Safari Journal',
+        name: 'Ryan Safari',
+        short_name: 'Ryan Safari',
         description:
           'Itinerary, destination guides, wildlife field guide and documents for the Ryan Party safari, September 2026.',
         theme_color: '#2C2416',

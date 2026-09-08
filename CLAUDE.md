@@ -1,4 +1,4 @@
-# Safari Journal — Claude Code Context
+# Ryan Safari (Claude Code Context)
 
 ## Project Summary
 
@@ -81,6 +81,23 @@ feature-detected.
 
 Object URLs for personal files are created on open and revoked on close and unmount; the blob is otherwise
 pinned for the session.
+
+### Species photos: portraits must not be centre-cropped
+13 of the 50 photos are portrait. `object-fit: cover` with a centred crop cut the
+animal's head off in exactly those cases; the African fish eagle (719x1000) showed
+as a headless body everywhere it appeared.
+
+- Thumbnails (`.animal-row img`, 62px square) keep `cover` but use
+  `object-position: 50% 20%`. Landscape photos are unaffected, since with `cover`
+  in a square box they have no vertical overflow to reposition.
+- The detail hero (`.animal-hero`) no longer forces a 220px letterbox. It is
+  `height: auto` with `object-fit: contain` and `max-height: 46vh`, so the whole
+  animal is always visible. Landscape photos render edge to edge exactly as
+  before; only the tallest few get cream side bars. `min-height` reserves the box
+  so text below does not jump before the photo decodes.
+
+Before changing either rule, render the crops rather than guessing - a 62px square
+crop of a tall photo is not obvious by eye from the source file.
 
 ### Prose style: no em dashes
 User-visible copy uses commas, colons, full stops and parentheses. 366 em dashes were removed from the data
