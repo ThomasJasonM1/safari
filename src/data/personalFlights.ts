@@ -37,7 +37,7 @@ export const TRAVELER_GROUPS: TravelerGroup[] = [
         date: 'Sun 14 Sep',
         depart: 'TBC',
         arrive: '11:00',
-        note: 'Early arrival — Sep 14. Early check-in at Commodore Hotel requested.',
+        note: 'Early arrival, Sep 14. Early check-in at Commodore Hotel requested.',
       },
     ],
     return: [
@@ -95,7 +95,7 @@ export const TRAVELER_GROUPS: TravelerGroup[] = [
         date: 'Sun 14 Sep',
         depart: '22:30',
         arrive: '11:00 (15 Sep)',
-        note: 'Overnight flight — arrives Cape Town Sep 15 at 11:00.',
+        note: 'Overnight flight: arrives Cape Town Sep 15 at 11:00.',
       },
     ],
     return: [

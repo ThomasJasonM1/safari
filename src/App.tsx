@@ -12,6 +12,7 @@ import FlightsPage from './pages/FlightsPage';
 import FlightDetailPage from './pages/FlightDetailPage';
 import PackingListPage from './pages/PackingListPage';
 import OfflineStatus from './components/OfflineStatus';
+import OfflineBadge from './components/OfflineBadge';
 
 const TABS = [
   { to: '/', icon: '🗓', label: 'Trip' },
@@ -91,6 +92,7 @@ export default function App() {
             {title}
             {sub && <span className="sub">{sub}</span>}
           </h1>
+          <OfflineBadge />
           <Menu />
         </div>
       </header>

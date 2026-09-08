@@ -56,13 +56,36 @@ Cloudflare put Pages into maintenance mode and steers new projects to Workers, w
 ### PWA / offline
 `vite-plugin-pwa` with `registerType: 'autoUpdate'`. `workbox.globPatterns` includes `jpg` and `pdf`, and `maximumFileSizeToCacheInBytes` is raised to 4 MB because the itinerary PDF is ~1 MB and the 2 MB default would silently drop it. The precache is ~9 MB / 66 entries: the app shell, all 54 photos, both bundled PDFs. `sw.js` and the Workbox runtime are correctly *not* precached.
 
-`src/components/OfflineStatus.tsx` shows a one-time "saved for offline" confirmation (auto-dismissing) and a persistent marker while `navigator.onLine` is false. The confirmation matters operationally — someone leaving wifi needs to know the 9 MB download actually finished.
+`src/components/OfflineStatus.tsx` shows only the one-time "saved for offline" confirmation, which auto-dismisses. It matters operationally: someone leaving wifi needs to know the 9 MB download actually finished.
+
+**The offline indicator is a header badge (`OfflineBadge`), not a floating toast.** It used to be a second state of the same toast, which sat above the tab bar for as long as the signal was gone, covered the "Add a document" button, and had no dismiss control, so adding a document offline was impossible. Anything that can persist indefinitely belongs in the chrome, not over the content.
 
 `public/_headers` (Cloudflare, both Workers static assets and Pages) keeps `index.html`, `sw.js`, `manifest.webmanifest` and `/docs/*` on `no-cache` so updates propagate immediately, while content-hashed `/assets/*` are `immutable` for a year. These are the HTTP cache and are orthogonal to the precache — offline, `Cache-Control` is never consulted.
 
 `devOptions.enabled` is `false`: an autoUpdate worker in front of the Vite dev server causes stale-module confusion.
 
 Verified end to end: with the server killed outright, a full reload still renders all 102 species rows and serves the 1 MB itinerary PDF from cache; with the server back and a newer build on disk, an open page auto-reloads onto the new bundle without any user action.
+
+### Documents open in an in-app viewer, never a new tab
+`src/components/DocumentViewer.tsx` renders both bundled PDFs and personal files in an overlay with an
+explicit close button, Escape, and backdrop-click. It replaced two separate broken paths:
+
+- Bundled PDFs used `<a target="_blank">`. Inside an installed PWA that hands the file to a chrome-less
+  in-app browser view, and the only way back was to kill the app.
+- Personal files used `window.open(objectUrl)` after an `await`, which had lost the user-gesture context,
+  so mobile browsers blocked it silently. Camera captures failed every time.
+
+Do not reintroduce `window.open` or `target="_blank"` for documents. The viewer keeps a "open in a new tab"
+link in its footer for PDFs, because iOS renders PDFs in an iframe unreliably and that cannot be
+feature-detected.
+
+Object URLs for personal files are created on open and revoked on close and unmount; the blob is otherwise
+pinned for the session.
+
+### Prose style: no em dashes
+User-visible copy uses commas, colons, full stops and parentheses. 366 em dashes were removed from the data
+files in September 2026 because they read as machine-written. Code comments are exempt. When editing the
+data files, do not reintroduce them.
 
 ### Storage split — localStorage vs IndexedDB
 - `src/lib/storage.ts` — small JSON sets in `localStorage` under a `safari:` prefix (`safari:spotted`, `safari:packing`). Every read/write is try/caught so private browsing or full storage degrades to "does not persist" rather than a crash.

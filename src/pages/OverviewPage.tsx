@@ -46,7 +46,7 @@ export default function OverviewPage() {
       <div className="section" style={{ borderLeft: `4px solid ${colors.destinations.timbavati}` }}>
         <h3>South Africa &amp; Zimbabwe · September 2026</h3>
         <p style={{ margin: 0 }}>
-          Cape Town, the Timbavati, Victoria Falls and Mana Pools — eleven days for six travellers, arranged by{' '}
+          Cape Town, the Timbavati, Victoria Falls and Mana Pools. Eleven days for six travellers, arranged by{' '}
           {OPERATOR}.
         </p>
         <p className="small muted" style={{ margin: '8px 0 0' }}>

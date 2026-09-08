@@ -1,5 +1,6 @@
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { BUNDLED_DOCS } from '../data/bundledDocs';
+import DocumentViewer, { type ViewerDoc } from '../components/DocumentViewer';
 import {
   addPersonalDoc,
   deletePersonalDoc,
@@ -22,13 +23,33 @@ function iconFor(type: string): string {
 export default function DocumentsPage() {
   const [personal, setPersonal] = useState<DocMeta[]>([]);
   const [error, setError] = useState<string | null>(null);
+  const [viewing, setViewing] = useState<ViewerDoc | null>(null);
   const fileInput = useRef<HTMLInputElement>(null);
+  const cameraInput = useRef<HTMLInputElement>(null);
+
+  // Object URLs for personal files are created on open and must be released, or
+  // the blob stays pinned in memory for the rest of the session.
+  const objectUrl = useRef<string | null>(null);
 
   useEffect(() => {
     listPersonalDocs()
       .then(setPersonal)
       .catch(() => setError('This browser will not let the site store files, so added documents will not persist.'));
   }, []);
+
+  const releaseObjectUrl = useCallback(() => {
+    if (objectUrl.current) {
+      URL.revokeObjectURL(objectUrl.current);
+      objectUrl.current = null;
+    }
+  }, []);
+
+  useEffect(() => releaseObjectUrl, [releaseObjectUrl]);
+
+  const closeViewer = useCallback(() => {
+    setViewing(null);
+    releaseObjectUrl();
+  }, [releaseObjectUrl]);
 
   const onPick = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = Array.from(e.target.files ?? []);
@@ -43,12 +64,12 @@ export default function DocumentsPage() {
     }
   };
 
-  const onOpen = async (doc: DocMeta) => {
+  const openPersonal = async (doc: DocMeta) => {
     try {
+      releaseObjectUrl();
       const url = await personalDocUrl(doc.id);
-      window.open(url, '_blank', 'noopener');
-      // Give the new tab a moment to take the blob before releasing it.
-      window.setTimeout(() => URL.revokeObjectURL(url), 60_000);
+      objectUrl.current = url;
+      setViewing({ name: doc.name, url, type: doc.type });
     } catch {
       setError('That document is no longer stored in this browser.');
     }
@@ -65,7 +86,7 @@ export default function DocumentsPage() {
       <div className="notice">
         <span aria-hidden="true">🔒</span>
         <span>
-          The trip documents below ship with the site. Anything you add yourself is stored in this browser only — never
+          The trip documents below ship with the site. Anything you add yourself is stored in this browser only, never
           uploaded, and not visible to anyone else in the party.
         </span>
       </div>
@@ -83,10 +104,15 @@ export default function DocumentsPage() {
             <div className="mt">PDF · {formatBytes(d.size)}</div>
           </div>
           <div className="doc-actions">
-            <a className="icon-btn" href={docHref(d.file)} target="_blank" rel="noreferrer noopener" title="Open">
+            <button
+              className="icon-btn"
+              onClick={() => setViewing({ name: d.name, url: docHref(d.file), type: 'application/pdf' })}
+              title="View"
+              aria-label={`View ${d.name}`}
+            >
               ↗
-            </a>
-            <a className="icon-btn" href={docHref(d.file)} download title="Download">
+            </button>
+            <a className="icon-btn" href={docHref(d.file)} download title="Save a copy">
               ⤓
             </a>
           </div>
@@ -106,7 +132,7 @@ export default function DocumentsPage() {
         <div className="empty">
           <p style={{ fontWeight: 700, marginBottom: 4 }}>Nothing added yet</p>
           <p className="small" style={{ margin: 0 }}>
-            Add a passport scan, visa, travel insurance certificate, vaccination record — or the TMAC invoice, which is
+            Add a passport scan, visa, travel insurance certificate, vaccination record, or the TMAC invoice, which is
             deliberately not shipped with the site because it carries bank details.
           </p>
         </div>
@@ -124,7 +150,7 @@ export default function DocumentsPage() {
             </div>
           </div>
           <div className="doc-actions">
-            <button className="icon-btn" onClick={() => onOpen(d)} title="Open">
+            <button className="icon-btn" onClick={() => openPersonal(d)} title="View" aria-label={`View ${d.name}`}>
               ↗
             </button>
             <button className="icon-btn danger" onClick={() => onDelete(d)} title="Remove">
@@ -142,9 +168,27 @@ export default function DocumentsPage() {
         onChange={onPick}
         style={{ display: 'none' }}
       />
-      <button className="btn block" style={{ marginTop: 12 }} onClick={() => fileInput.current?.click()}>
-        + Add a document
-      </button>
+      {/* `capture` asks the phone for the camera directly, so the two buttons
+          lead to genuinely different pickers rather than the same sheet. */}
+      <input
+        ref={cameraInput}
+        type="file"
+        accept="image/*"
+        capture="environment"
+        onChange={onPick}
+        style={{ display: 'none' }}
+      />
+
+      <div className="doc-add">
+        <button className="btn" onClick={() => fileInput.current?.click()}>
+          + Add a file
+        </button>
+        <button className="btn ghost" onClick={() => cameraInput.current?.click()}>
+          📷 Take a photo
+        </button>
+      </div>
+
+      {viewing && <DocumentViewer doc={viewing} onClose={closeViewer} />}
     </>
   );
 }

@@ -40,10 +40,10 @@ export const ITINERARY: DayEntry[] = [
     destination: 'transit',
     location: 'Dallas, Texas → Paris, France',
     hotel: '',
-    headline: 'Jason & Greg — Depart Dallas',
+    headline: 'Jason & Greg: Depart Dallas',
     activities: [
       'Jason & Greg depart Dallas Fort Worth International (DFW) on American Airlines AA 48 at 15:05.',
-      'Overnight transatlantic flight to Paris Charles de Gaulle (CDG) — landing 07:45 on Sep 12.',
+      'Overnight transatlantic flight to Paris Charles de Gaulle (CDG), landing 07:45 on Sep 12.',
       '2-night Paris layover begins on arrival.',
     ],
     flights: [
@@ -71,10 +71,10 @@ export const ITINERARY: DayEntry[] = [
     destination: 'transit',
     location: 'Paris, France',
     hotel: '',
-    headline: 'Jason & Greg — Paris',
+    headline: 'Jason & Greg, Paris',
     activities: [
       'Arrive Paris Charles de Gaulle (CDG) at 07:45 from Dallas.',
-      'Two nights in Paris — no planned group activities. Explore at leisure.',
+      'Two nights in Paris, no planned group activities. Explore at leisure.',
       'Depart CDG on Sep 14 at 18:20 on BA 309 to London Heathrow, then onwards to Cape Town.',
     ],
     meals: 'Own arrangements.',
@@ -92,11 +92,11 @@ export const ITINERARY: DayEntry[] = [
     destination: 'capeTown',
     location: 'Cape Town, South Africa',
     hotel: 'Commodore Hotel, V&A Waterfront',
-    headline: 'Tim & Sally — Arrive Cape Town',
+    headline: 'Tim & Sally: Arrive Cape Town',
     activities: [
-      'Tim & Sally arrive Cape Town International Airport on AA 6791 from London Heathrow — landing 11:00.',
+      'Tim & Sally arrive Cape Town International Airport on AA 6791 from London Heathrow, landing 11:00.',
       'Early check-in at Commodore Hotel requested (contact hotel ahead to confirm room availability).',
-      'Rest of the day completely free — relax, recover from the long-haul flight, and wander the V&A Waterfront at your own pace.',
+      'Rest of the day completely free: relax, recover from the long-haul flight, and wander the V&A Waterfront at your own pace.',
       'No planned activities. The rest of the group arrives tomorrow (Sep 15).',
     ],
     flights: [
@@ -110,12 +110,12 @@ export const ITINERARY: DayEntry[] = [
         depart: 'TBC',
         arrive: '11:00',
         type: 'commercial',
-        note: 'Tim & Sally only. Early check-in at Commodore Hotel is requested but subject to availability — call +27 11 806 6888 a day ahead to confirm.',
+        note: 'Tim & Sally only. Early check-in at Commodore Hotel is requested but subject to availability, call +27 11 806 6888 a day ahead to confirm.',
       },
     ],
     meals: 'No meals included today.',
     notes: [
-      'Tim & Sally only — rest of group arrives Sep 15.',
+      'Tim & Sally only. Rest of group arrives Sep 15.',
       'Early check-in subject to room availability. Commodore Hotel: +27 11 806 6888.',
     ],
   },
@@ -127,11 +127,11 @@ export const ITINERARY: DayEntry[] = [
     destination: 'transit',
     location: 'Paris → London → Cape Town (in transit)',
     hotel: '',
-    headline: 'Jason & Greg — London to Cape Town',
+    headline: 'Jason & Greg, London to Cape Town',
     activities: [
-      'Depart Paris Charles de Gaulle on BA 309 at 18:20 — a short hop to London Heathrow, arriving 18:35.',
+      'Depart Paris Charles de Gaulle on BA 309 at 18:20, a short hop to London Heathrow, arriving 18:35.',
       'Transit London Heathrow. Depart on British Airways BA 059 at 22:30 for Cape Town.',
-      'Overnight flight — arriving Cape Town International at 11:00 on Sep 15.',
+      'Overnight flight, arriving Cape Town International at 11:00 on Sep 15.',
     ],
     flights: [
       {
@@ -171,12 +171,12 @@ export const ITINERARY: DayEntry[] = [
     hotel: 'Commodore Hotel, V&A Waterfront',
     headline: 'Arrive Cape Town',
     activities: [
-      'Jason & Greg arrive Cape Town International on British Airways BA 059 from London Heathrow — landing 11:00.',
-      'Jon & Stefanie arrive Cape Town International on United Airlines from Washington Dulles (IAD) — landing 15:20.',
-      'Meet & Greet by Colossal Aviapartner in the main terminal building — they will assist all arriving guests through customs, immigration, and baggage collection.',
+      'Jason & Greg arrive Cape Town International on British Airways BA 059 from London Heathrow, landing 11:00.',
+      'Jon & Stefanie arrive Cape Town International on United Airlines from Washington Dulles (IAD), landing 15:20.',
+      'Meet & Greet by Colossal Aviapartner in the main terminal building. They will assist all arriving guests through customs, immigration, and baggage collection.',
       'Private transfer by Wilderness Touring Cape Town from Cape Town International Airport to The Commodore Hotel.',
       'Check in, settle in, and enjoy the views of Table Mountain, Robben Island, the harbour, and the Atlantic Ocean.',
-      'Explore the iconic Victoria & Alfred Waterfront on foot — restaurants, boutiques, and the waterfront are right on your doorstep.',
+      'Explore the iconic Victoria & Alfred Waterfront on foot. Restaurants, boutiques, and the waterfront are right on your doorstep.',
     ],
     flights: [
       {
@@ -208,7 +208,7 @@ export const ITINERARY: DayEntry[] = [
     notes: [
       'Rooms: 3 × Family Rooms with Queen Bed',
       'Check-in time: from 2:00 PM',
-      'Tim & Sally arrived a day early (Sep 14) and will be resting or exploring independently today — no planned activities for them.',
+      'Tim & Sally arrived a day early (Sep 14) and will be resting or exploring independently today, no planned activities for them.',
     ],
   },
   {
@@ -221,16 +221,16 @@ export const ITINERARY: DayEntry[] = [
     headline: 'Full Day Cape Peninsula Discovery',
     activities: [
       'Collected from Commodore Hotel by Wilderness Touring Cape Town cultural guide for a full-day private tour.',
-      'Drive the spectacular Chapman\'s Peak — one of the world\'s most scenic coastal roads.',
+      'Drive the spectacular Chapman\'s Peak, one of the world\'s most scenic coastal roads.',
       'Cape Point Nature Reserve: visit the lighthouse at the furthermost tip of the Cape Peninsula where two oceans meet.',
       'Boulders Penguin Colony: walk among hundreds of African penguins on the beach at Simons Town.',
       'Wine tasting in the Constantia wine valley, where South Africa\'s wine industry was born.',
-      'Kirstenbosch National Botanical Garden — one of the world\'s great gardens, set against the slopes of Table Mountain.',
+      'Kirstenbosch National Botanical Garden. One of the world\'s great gardens, set against the slopes of Table Mountain.',
       'Pass through the charming coastal villages of Kalk Bay and Muizenberg on the False Bay coastline.',
       'Light lunch included from a leading local eatery.',
     ],
     meals: 'Breakfast (hotel). Light lunch (included on tour). Dinner (own arrangement).',
-    insiderTip: 'Bring a warm layer — the Cape Point area can be windy even in September. The penguin colony at Boulders is magical in the late afternoon light.',
+    insiderTip: 'Bring a warm layer. The Cape Point area can be windy even in September. The penguin colony at Boulders is magical in the late afternoon light.',
     notes: [
       'Entrance included: Cape of Good Hope & Cape Point Funicular, Boulders Penguin Colony, Kirstenbosch Gardens, wine tastings.',
       'Lunch is included. Dinner is at own expense.',
@@ -247,13 +247,13 @@ export const ITINERARY: DayEntry[] = [
     activities: [
       'Collected from Commodore Hotel for a full-day private Winelands tour.',
       'Explore the picturesque Winelands region: vine-covered hills, historic wine farms, and charming towns of Franschhoek and Stellenbosch.',
-      'Visit a museum of historical significance — choose from Franschhoek Motor Museum, Stellenbosch Museum, or Huguenot Museum.',
+      'Visit a museum of historical significance: choose from Franschhoek Motor Museum, Stellenbosch Museum, or Huguenot Museum.',
       'Wine tastings and gourmet food pairing at leading estates.',
-      'Table Mountain Aerial Cableway (weather permitting) — a fast-track surcharge is included to skip the queue.',
+      'Table Mountain Aerial Cableway (weather permitting). A fast-track surcharge is included to skip the queue.',
       'Gourmet dinner at a fine-dining restaurant on the day\'s journey.',
     ],
     meals: 'Breakfast (hotel). Gourmet lunch/dinner (included on tour).',
-    insiderTip: 'If Table Mountain clouds over, the cable car won\'t run — the funds are reallocated to an alternative activity. Clear mornings are best for the summit.',
+    insiderTip: 'If Table Mountain clouds over, the cable car won\'t run. The funds are reallocated to an alternative activity. Clear mornings are best for the summit.',
     notes: [
       'Includes: museum entry, wine tastings with food pairing, Table Mountain fast-track, gourmet food experience.',
       'Early departure recommended to make the most of the Winelands before heading up Table Mountain.',
@@ -266,13 +266,13 @@ export const ITINERARY: DayEntry[] = [
     destination: 'timbavati',
     location: 'Timbavati Private Nature Reserve',
     hotel: 'Kings Camp',
-    headline: 'Fly to Kruger — Begin Safari',
+    headline: 'Fly to Kruger, Begin Safari',
     activities: [
       'Private transfer from Commodore Hotel to Cape Town International Airport.',
-      'Meet & Greet by Colossal Aviapartner at CPT — assisted check-in, passport control, and boarding gate escort.',
+      'Meet & Greet by Colossal Aviapartner at CPT. Assisted check-in, passport control, and boarding gate escort.',
       'Fly Airlink 4Z 661: Cape Town (07:50) → Kruger Mpumalanga International Airport (10:10).',
       'Federal Air charter flight: Kruger MQP (13:00) → Kings Camp airstrip (15:00).',
-      'Arrive Kings Camp — welcomed with cool towels and a bush briefing.',
+      'Arrive Kings Camp, welcomed with cool towels and a bush briefing.',
       'Afternoon game drive or sunset safari activity.',
       'Dinner at the boma or restaurant overlooking the bush.',
     ],
@@ -299,11 +299,11 @@ export const ITINERARY: DayEntry[] = [
         depart: '13:00',
         arrive: '15:00',
         type: 'charter',
-        note: 'Light aircraft transfer. 7kg soft bag weight limit per person — no hard-sided luggage.',
+        note: 'Light aircraft transfer. 7kg soft bag weight limit per person, no hard-sided luggage.',
       },
     ],
     meals: 'All meals, selected alcoholic and non-alcoholic beverages included at Kings Camp.',
-    insiderTip: 'The Timbavati is home to the world\'s only naturally occurring white lions — keep your eyes open on every drive.',
+    insiderTip: 'The Timbavati is home to the world\'s only naturally occurring white lions: keep your eyes open on every drive.',
     notes: [
       'Rooms: 2 × Honeymoon Suites, 1 × Luxury Suite',
       'Includes: All meals, selected beverages, scheduled shared safari activities.',
@@ -317,17 +317,17 @@ export const ITINERARY: DayEntry[] = [
     destination: 'timbavati',
     location: 'Timbavati Private Nature Reserve',
     hotel: 'Kings Camp',
-    headline: 'Full Day Safari — Timbavati',
+    headline: 'Full Day Safari, Timbavati',
     activities: [
-      'Pre-dawn wake-up call with tea/coffee and rusks — then morning game drive at first light when predators are most active.',
+      'Pre-dawn wake-up call with tea/coffee and rusks, then morning game drive at first light when predators are most active.',
       'Return to camp for full bush breakfast. Time to relax on your private veranda overlooking the waterhole.',
-      'Guided bush walk with armed ranger — experience the bush at ground level and learn to track animals.',
+      'Guided bush walk with armed ranger, experience the bush at ground level and learn to track animals.',
       'Siesta through the hottest part of the day. Use the pool or spa.',
       'Afternoon game drive from 4:00 PM through golden-hour and into the night, spotlighted for nocturnal species.',
       'Bush dinner under the stars at the boma.',
     ],
     meals: 'All meals and selected beverages included.',
-    insiderTip: 'Ask your ranger to take you past the waterhole in the early morning — elephant herds often come to drink at sunrise.',
+    insiderTip: 'Ask your ranger to take you past the waterhole in the early morning. Elephant herds often come to drink at sunrise.',
   },
   {
     date: 'Sunday, September 20, 2026',
@@ -336,16 +336,16 @@ export const ITINERARY: DayEntry[] = [
     destination: 'timbavati',
     location: 'Timbavati Private Nature Reserve',
     hotel: 'Kings Camp',
-    headline: 'Full Day Safari — Timbavati',
+    headline: 'Full Day Safari, Timbavati',
     activities: [
-      'Morning game drive — your final full morning in the Timbavati, focusing on any animals not yet spotted.',
+      'Morning game drive, your final full morning in the Timbavati, focusing on any animals not yet spotted.',
       'Breakfast and mid-morning activities at camp.',
       'Optional spa treatment or relaxation at the private pool.',
-      'Afternoon game drive at sunset — the golden light is perfect for wildlife photography.',
+      'Afternoon game drive at sunset. The golden light is perfect for wildlife photography.',
       'Dinner at the restaurant overlooking the open savannah.',
     ],
     meals: 'All meals and selected beverages included.',
-    insiderTip: 'Kings Camp\'s waterhole is floodlit at night — ask the staff to wake you if elephants come to drink.',
+    insiderTip: 'Kings Camp\'s waterhole is floodlit at night: ask the staff to wake you if elephants come to drink.',
   },
   {
     date: 'Monday, September 21, 2026',
@@ -356,14 +356,14 @@ export const ITINERARY: DayEntry[] = [
     hotel: 'Palm River Hotel',
     headline: 'Fly to Victoria Falls',
     activities: [
-      'Early morning game drive — final sunrise in the Timbavati.',
+      'Early morning game drive, final sunrise in the Timbavati.',
       'Breakfast at Kings Camp. Bags out by 08:00.',
       'Federal Air charter: Kings Camp (09:00) → Kruger MQP (12:30).',
       'Fastjet (operated by Federal Air): Kruger MQP (12:45) → Victoria Falls International Airport (14:30).',
       'Transfer from VFA airport to Palm River Hotel on the banks of the Zambezi River.',
       'Check in. Freshen up.',
-      'Afternoon half-day vehicle and guide with pre-paid entrance for a PM tour of Victoria Falls — the "Smoke that Thunders."',
-      'Sunset sundowner cruise on the Zambezi — spot hippos and crocodiles.',
+      'Afternoon half-day vehicle and guide with pre-paid entrance for a PM tour of Victoria Falls, the "Smoke that Thunders."',
+      'Sunset sundowner cruise on the Zambezi, spot hippos and crocodiles.',
     ],
     flights: [
       {
@@ -392,7 +392,7 @@ export const ITINERARY: DayEntry[] = [
       },
     ],
     meals: 'Breakfast and mini bar with selected beverages included at Palm River Hotel.',
-    insiderTip: 'Book a private dining experience in the garden overlooking the mighty Zambezi — unforgettable at sunset.',
+    insiderTip: 'Book a private dining experience in the garden overlooking the mighty Zambezi, unforgettable at sunset.',
     notes: [
       'Rooms: 3 × Deluxe Rooms',
       'Includes: Breakfast, mini bar with selected beverages, daily shuttle to town centre.',
@@ -407,11 +407,11 @@ export const ITINERARY: DayEntry[] = [
     hotel: 'Wilderness Ruckomechi',
     headline: 'Fly to Mana Pools',
     activities: [
-      'Morning at leisure — breakfast at Palm River Hotel overlooking the Zambezi.',
+      'Morning at leisure, breakfast at Palm River Hotel overlooking the Zambezi.',
       'Transfer from Palm River Hotel to Victoria Falls International Airport.',
       'Wilderness Air Zimbabwe charter flight: VFA → Wilderness Ruckomechi airstrip (times confirmed day prior, typically 10:00–16:00).',
       'Arrive Wilderness Ruckomechi in the heart of Mana Pools National Park.',
-      'Welcome briefing and first game activity — Mana Pools is renowned for walking safaris alongside elephants.',
+      'Welcome briefing and first game activity. Mana Pools is renowned for walking safaris alongside elephants.',
       'Sundowner on the Zambezi riverbank.',
     ],
     flights: [
@@ -429,7 +429,7 @@ export const ITINERARY: DayEntry[] = [
       },
     ],
     meals: 'All meals, selected alcoholic and non-alcoholic beverages, and daily laundry included.',
-    insiderTip: 'A boat cruise along the mighty Zambezi is a wonderful way to see wildlife and waterbirds. For the adventurous — canoe the river!',
+    insiderTip: 'A boat cruise along the mighty Zambezi is a wonderful way to see wildlife and waterbirds. For the adventurous, canoe the river!',
     notes: [
       'Rooms: 3 × Tented Rooms',
       'Includes: All meals, selected beverages, scheduled shared safari activities, daily laundry.',
@@ -445,15 +445,15 @@ export const ITINERARY: DayEntry[] = [
     hotel: 'Wilderness Ruckomechi',
     headline: 'Full Day Mana Pools Safari',
     activities: [
-      'Dawn walking safari through the Mana Pools floodplains — Ruckomechi is famous for guided walks among elephant and lion.',
+      'Dawn walking safari through the Mana Pools floodplains. Ruckomechi is famous for guided walks among elephant and lion.',
       'Breakfast back at camp overlooking the broad Zambezi.',
-      'Canoe excursion on the Zambezi River — paddle alongside hippos, crocodiles, and an extraordinary variety of birds.',
+      'Canoe excursion on the Zambezi River: paddle alongside hippos, crocodiles, and an extraordinary variety of birds.',
       'Afternoon: 4x4 game drive on the floodplains. Mana Pools has exceptional wild dog sightings in the dry season.',
       'Sunset pontoon boat cruise on the Zambezi.',
       'Dinner under the African stars at the fire pit.',
     ],
     meals: 'All meals and selected beverages included.',
-    insiderTip: 'The "Star Bed" by the waterhole — ask the camp about booking it for your last night. Falling asleep under the Milky Way in the African bush is incomparable.',
+    insiderTip: 'The "Star Bed" by the waterhole: ask the camp about booking it for your last night. Falling asleep under the Milky Way in the African bush is incomparable.',
   },
   {
     date: 'Thursday, September 24, 2026',
@@ -464,21 +464,21 @@ export const ITINERARY: DayEntry[] = [
     hotel: 'Wilderness Ruckomechi',
     headline: 'Last Full Day at Mana Pools',
     activities: [
-      'Final morning game drive or walking safari — the golden hour on the Zambezi is not to be missed.',
+      'Final morning game drive or walking safari. The golden hour on the Zambezi is not to be missed.',
       'Breakfast and a leisurely morning.',
       'Optional: guided canoe trip on the river, or birding walk near camp.',
       'Lunch at camp. Afternoon free for relaxation, swimming, or wildlife watching from the pool deck.',
-      'Farewell dinner — sundowners by the river and a special evening meal.',
+      'Farewell dinner, sundowners by the river and a special evening meal.',
     ],
     meals: 'All meals and selected beverages included.',
-    insiderTip: 'The "outdoor bath with a view" at Ruckomechi is a bucket-list experience — book it for the afternoon.',
+    insiderTip: 'The "outdoor bath with a view" at Ruckomechi is a bucket-list experience, book it for the afternoon.',
   },
   {
     date: 'Friday, September 25, 2026',
     dateShort: 'Sep 25',
     dayNum: 11,
     destination: 'manaPools',
-    location: 'Departing — Harare / Johannesburg',
+    location: 'Departing, Harare / Johannesburg',
     hotel: '',
     headline: 'Depart for Home',
     activities: [
@@ -514,7 +514,7 @@ export const ITINERARY: DayEntry[] = [
         depart: '13:30',
         arrive: '15:15',
         type: 'commercial',
-        note: 'Check in 3 hours before (10:30). Colossal Aviapartner meets you at the terminal entrance at JNB. Bags must have at least one flat surface — no irregularly shaped bags or long hanging straps accepted at O.R. Tambo.',
+        note: 'Check in 3 hours before (10:30). Colossal Aviapartner meets you at the terminal entrance at JNB. Bags must have at least one flat surface, no irregularly shaped bags or long hanging straps accepted at O.R. Tambo.',
       },
       {
         flightNumber: 'TBC',
@@ -577,5 +577,5 @@ export const SUPPLIERS = [
   { name: 'TMAC (Operator)', phone: 'TBC via WhatsApp' },
 ];
 
-export const BOOKING_REFERENCE = 'Ryan x 6 — 927743';
+export const BOOKING_REFERENCE = 'Ryan x 6, 927743';
 export const OPERATOR = 'The Malcolm Ainscough Collection (TMAC)';

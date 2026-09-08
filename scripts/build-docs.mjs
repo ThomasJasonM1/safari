@@ -25,15 +25,15 @@ const TIERS = [
 /** Human-friendly titles, keyed by filename. Anything else falls back to the filename. */
 const TITLES = {
   'safari-itinerary.pdf': {
-    name: 'Final Itinerary — Ryan x 6',
+    name: 'Final Itinerary for Ryan x 6',
     description: 'The full TMAC booking document: every night, transfer, charter flight and inclusion.',
   },
   'tmac-recommended-packing-list.pdf': {
     name: 'TMAC Recommended Packing List',
-    description: "The operator's own packing guidance — luggage rules, clothing, first aid and laundry notes.",
+    description: "The operator's own packing guidance: luggage rules, clothing, first aid and laundry notes.",
   },
   'tmac-invoice-08099-tim-and-sally-ryan.pdf': {
-    name: 'TMAC Invoice 08099 — Tim & Sally Ryan',
+    name: 'TMAC Invoice 08099 for Tim & Sally Ryan',
     description: 'Balance payment invoice for the party, including bank remittance details.',
   },
 };

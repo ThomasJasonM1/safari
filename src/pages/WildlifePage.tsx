@@ -61,7 +61,7 @@ export default function WildlifePage() {
       <div className="notice">
         <span aria-hidden="true">✓</span>
         <span>
-          Tick a species when you spot it. Ticks are saved in this browser only — everyone in the party keeps their own
+          Tick a species when you spot it. Ticks are saved in this browser only. Everyone in the party keeps their own
           list.
         </span>
       </div>

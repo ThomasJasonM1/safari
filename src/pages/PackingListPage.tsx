@@ -45,7 +45,7 @@ export default function PackingListPage() {
           <span style={{ width: `${(done / total) * 100}%` }} />
         </div>
         <p className="small muted" style={{ margin: '10px 0 0' }}>
-          Saved in this browser only. See the TMAC packing list in the Docs tab for the operator&rsquo;s own guidance —
+          Saved in this browser only. See the TMAC packing list in the Docs tab for the operator&rsquo;s own guidance,
           especially the soft-bag rule for the light aircraft. Confirm the exact weight allowance with TMAC before you
           pack.
         </p>
