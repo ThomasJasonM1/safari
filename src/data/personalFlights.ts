@@ -153,7 +153,7 @@ export const TRAVELER_GROUPS: TravelerGroup[] = [
         toCode: 'IST',
         date: 'Fri 25 Sep',
         depart: '18:00',
-        arrive: 'TBC',
+        arrive: '~05:00 +1',
         note: 'Flight number TBC. Check in by 15:00. Turkish has no nonstop Johannesburg to Washington service, so the trip home connects through Istanbul.',
       },
       {
@@ -166,7 +166,7 @@ export const TRAVELER_GROUPS: TravelerGroup[] = [
         date: 'Sat 26 Sep',
         depart: 'TBC',
         arrive: 'TBC',
-        note: 'Flight number and layover length TBC. Turkish runs two Istanbul to Dulles services a day.',
+        note: 'Flight number TBC, and it changes when they get home. The Johannesburg flight lands Istanbul about 05:00, and Turkish runs two Dulles services that day: 07:40 arriving Dulles about 11:00, and 15:50 arriving 19:50. Confirm which is ticketed before anyone arranges a pickup.',
       },
     ],
   },
