@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { ITINERARY, SUPPLIERS, type DayEntry } from '../data/itinerary';
+import { airlinesFor, airportsFor, type Contact } from '../data/contacts';
 import { accentFor } from '../theme/colors';
 import FlightCard from '../components/FlightCard';
 
@@ -10,24 +11,58 @@ const HOTEL_SUPPLIER: Record<string, string> = {
   manaPools: 'Wilderness Ruckomechi',
 };
 
+/** Airports where Colossal Aviapartner actually meets the party. */
+const COLOSSAL_AIRPORTS = ['CPT', 'JNB'];
+
+interface ContactGroup {
+  title: string;
+  items: Contact[];
+}
+
+const supplier = (name: string): Contact | undefined => SUPPLIERS.find((s) => s.name === name);
+
 /**
- * Narrows the supplier list to the numbers that are actually useful on this day:
- * the emergency line and the operator always, plus wherever you are sleeping and
- * whoever is flying you somewhere.
+ * Builds the day's contact list from what the day actually contains.
+ *
+ * The previous version keyed almost everything off `destination`, which left the
+ * travel days close to useless: the four pre-trip days are `transit`, so they
+ * showed a South African emergency line and nothing else while the traveller was
+ * standing in San Francisco or Dulles. Departure day was worse, with seven
+ * flights across five airlines and not one airline number among them.
+ *
+ * Airlines and airports are now derived from `day.flights`, so a day shows the
+ * desks for the aircraft it actually involves.
  */
-function getDayContacts(day: DayEntry) {
-  const names = new Set<string>(['Wilderness Emergency (After Hours)', 'TMAC (Operator)']);
-  if (HOTEL_SUPPLIER[day.destination]) names.add(HOTEL_SUPPLIER[day.destination]);
-  if (day.destination === 'capeTown') names.add('Wilderness Touring Cape Town');
-  if (day.flights?.length && day.destination !== 'transit') {
-    names.add('Colossal Aviapartner');
-    for (const f of day.flights) {
-      const carrier = f.carrier.toLowerCase();
-      if (carrier.includes('federal air')) names.add('Federal Air');
-      if (carrier.includes('wilderness air')) names.add('Wilderness Air Zimbabwe');
-    }
+function getDayContacts(day: DayEntry): ContactGroup[] {
+  const flights = day.flights ?? [];
+  const carriers = flights.map((f) => f.carrier);
+  const codes = flights.flatMap((f) => [f.fromCode, f.toCode]);
+
+  const always = [supplier('Wilderness Emergency (After Hours)'), supplier('TMAC (Operator)')];
+
+  const onTheGround: (Contact | undefined)[] = [];
+  const lodge = HOTEL_SUPPLIER[day.destination];
+  if (lodge) {
+    const entry = supplier(lodge);
+    // On departure day `hotel` is empty because nobody sleeps there, but the
+    // party was still at the camp that morning and it is the number to call
+    // about anything left behind. Keep it, relabelled honestly.
+    if (entry) onTheGround.push(day.hotel ? entry : { ...entry, detail: 'Where you stayed last night' });
   }
-  return SUPPLIERS.filter((s) => names.has(s.name));
+  if (day.destination === 'capeTown') onTheGround.push(supplier('Wilderness Touring Cape Town'));
+  // Colossal used to appear on every flight day, including bush charters they
+  // have nothing to do with. They work the two big South African airports.
+  if (codes.some((c) => COLOSSAL_AIRPORTS.includes(c))) {
+    onTheGround.push(supplier('Colossal Aviapartner'));
+  }
+
+  const groups: ContactGroup[] = [
+    { title: 'Emergency & operator', items: always.filter(Boolean) as Contact[] },
+    { title: 'On the ground', items: onTheGround.filter(Boolean) as Contact[] },
+    { title: 'Airlines flying today', items: airlinesFor(carriers) },
+    { title: 'Airports today', items: airportsFor(codes) },
+  ];
+  return groups.filter((g) => g.items.length > 0);
 }
 
 export default function DayDetailPage() {
@@ -99,19 +134,37 @@ export default function DayDetailPage() {
         </div>
       )}
 
-      <div className="section">
-        <h3>Key Contacts Today</h3>
-        {contacts.map((c) => (
-          <a
-            key={c.name}
-            className="contact"
-            href={c.phone.startsWith('+') ? `tel:${c.phone.replace(/\s/g, '')}` : undefined}
-          >
-            <span className="name">{c.name}</span>
-            <span className="num">{c.phone}</span>
-          </a>
-        ))}
-      </div>
+      {contacts.map((group) => (
+        <div className="section" key={group.title}>
+          <h3>{group.title}</h3>
+          {group.items.map((c) => {
+            const tel = c.phone?.startsWith('+') ? `tel:${c.phone.replace(/\s/g, '')}` : undefined;
+            return (
+              <div className="contact" key={c.name}>
+                <span className="contact-main">
+                  <span className="name">{c.name}</span>
+                  {c.detail && <span className="contact-detail">{c.detail}</span>}
+                </span>
+                <span className="contact-links">
+                  {c.phone &&
+                    (tel ? (
+                      <a className="num" href={tel}>
+                        {c.phone}
+                      </a>
+                    ) : (
+                      <span className="num">{c.phone}</span>
+                    ))}
+                  {c.url && (
+                    <a className="contact-site" href={c.url} target="_blank" rel="noreferrer noopener">
+                      Website ↗
+                    </a>
+                  )}
+                </span>
+              </div>
+            );
+          })}
+        </div>
+      ))}
     </>
   );
 }

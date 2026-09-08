@@ -99,6 +99,31 @@ as a headless body everywhere it appeared.
 Before changing either rule, render the crops rather than guessing - a 62px square
 crop of a tall photo is not obvious by eye from the source file.
 
+### Day contacts are derived from the day's flights
+`DayDetailPage.getDayContacts()` returns grouped contacts: emergency and operator,
+on the ground, airlines flying today, airports today. The last two are built from
+`day.flights[].carrier` and the from/to IATA codes, via `src/data/contacts.ts`.
+
+It used to key almost everything off `destination`, which left travel days close
+to useless. The four pre-trip days are `transit`, so someone standing in San
+Francisco or Dulles saw a South African emergency line and nothing else.
+Departure day had seven flights across five airlines and not one airline number.
+Meanwhile Colossal Aviapartner appeared on every flight day including bush
+charters they have nothing to do with; they are now scoped to CPT and JNB, which
+is where they actually meet the party.
+
+**Airline phone numbers must come from the airline's own domain.** Searching
+"<airline> customer service number" surfaces SEO-spam pages carrying numbers that
+route to scam call centres, and someone stranded at a gate will read a booking
+reference to whoever answers. Every number in `contacts.ts` was taken from aa.com,
+britishairways.com, turkishairlines.com or flyairlink.com. Fastjet carries a URL
+only, because no number could be sourced that way. Do not fill that in from a
+search result.
+
+Airports carry websites rather than switchboards: a switchboard rarely helps a
+passenger, while the site has live departures and terminal maps. Bush airstrips
+are deliberately absent, since the charter operator is the contact.
+
 ### Prose style: no em dashes
 User-visible copy uses commas, colons, full stops and parentheses. 366 em dashes were removed from the data
 files in September 2026 because they read as machine-written. Code comments are exempt. When editing the
