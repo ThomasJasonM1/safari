@@ -200,7 +200,6 @@ Species are tagged with every destination they genuinely occur at, so totals ove
 
 ## Items Still TBC
 
-- Jon & Stefanie's United flight number (IAD → CPT, Sep 15)
-- Jon & Stefanie's Turkish Airlines flight number (JNB → IAD, Sep 25)
-- Tim & Sally's AA 6791 departure time from LHR
+- **Airlink TK 8685 departure time from Johannesburg** (Sep 15). The Cape Town arrival of 15:20 is confirmed; only the departure is missing. Turkish codeshare numbers on Airlink metal are not in public schedule data.
+- **The Johannesburg turn on departure day does not add up.** Airlink 4Z 105 from Harare lands JNB 15:15 and Jon & Stefanie's TK 43 leaves at 18:00, but the itinerary says "check in by 15:00", fifteen minutes before they land. Ask TMAC whether bags are checked through from Harare.
 - **Charter baggage allowance.** The packing list used to assert 7 kg. TMAC's packing PDF says "usually 40 lb per person" and defers to the itinerary; the itinerary defers to an *Important Travel Information* document not in hand. The packing item now says to confirm with TMAC rather than stating a number — do not put a figure back without a source.

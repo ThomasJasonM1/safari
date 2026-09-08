@@ -135,9 +135,8 @@ Wikimedia rate-limits anonymous bursts, so the script backs off and retries; a f
 
 ## Still to be confirmed
 
-- Jon & Stefanie's United flight number (IAD → CPT, Sep 15)
-- Jon & Stefanie's Turkish Airlines flight number (JNB → IAD, Sep 25)
-- Tim & Sally's AA 6791 departure time from LHR
+- **Airlink TK 8685 departure time from Johannesburg** (Sep 15). The Cape Town arrival of 15:20 is confirmed; only the departure is missing. Turkish codeshare numbers on Airlink metal are not in public schedule data.
+- **The Johannesburg turn on departure day does not add up.** Airlink 4Z 105 from Harare lands JNB 15:15 and Jon & Stefanie's TK 43 leaves at 18:00, but the itinerary says "check in by 15:00", fifteen minutes before they land. Ask TMAC whether bags are checked through from Harare.
 - **Charter baggage allowance.** The packing list previously asserted a 7 kg limit. TMAC's own packing document says "usually 40 lb per person" and defers to the itinerary; the itinerary defers to a separate *Important Travel Information* document that is not in hand. Confirm with TMAC before packing.
 
-Update `src/data/personalFlights.ts` and the matching `flights` arrays in `src/data/itinerary.ts` once the flight numbers are known.
+All six travellers' flight numbers are now confirmed and recorded. Any further change goes in both `src/data/personalFlights.ts` (the Flights page) and the matching `flights` array in `src/data/itinerary.ts` (the day card), which are deliberately separate so a day can show only the legs that touch it.
